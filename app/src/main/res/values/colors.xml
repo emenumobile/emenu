@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FF6C6C80</color>
+    <color name="colorPrimaryDark">#292b3d</color>
+    <color name="graylight">#fafafa</color>
+    <color name="startblue">#09c6df</color>
+    <color name="endblue">#0bcce6</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="maroon">#D11D1D</color>
+    <color name="red">#DB2D2D</color>
+    <color name="red2">#FFDB2D2D</color>
+    <color name="fbutton_color_orange">#f39c12</color>
+</resources>

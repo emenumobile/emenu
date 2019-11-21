@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Emenu</string>
+    <string name="login">Login</string>
+    <string name="harga">Harga</string>
+    <string name="nama_menu">Nama</string>
+    <string name="deskripsi">Deskripsi</string>
+    <string name="profil">Profil</string>
+    <string name="selamat_datang">Selamat Datang</string>
+    <string name="pesanan">Pesanan</string>
+    <string name="kategori">Kategori</string>
+    <string name="password">Password</string>
+    <string name="nomor_meja">Nomor Meja</string>
+    <string name="kembali">Kembali</string>
+    <string name="qr_code_member">QR CODE MEMBER</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>
