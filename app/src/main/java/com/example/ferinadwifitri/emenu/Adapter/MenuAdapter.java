@@ -1,4 +1,4 @@
-package com.example.ferinadwifitri.emenu;
+package com.example.ferinadwifitri.emenu.Adapter;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.ferinadwifitri.emenu.R;
 import com.example.ferinadwifitri.emenu.model.Menu;
 
 import java.util.List;
@@ -18,7 +19,7 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.ViewHolder> {
     private Context context;
     private List<Menu> menus;
 
-    MenuAdapter(Context context) {
+    public MenuAdapter(Context context) {
         this.context = context;
     }
 

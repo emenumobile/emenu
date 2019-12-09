@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
+import com.example.ferinadwifitri.emenu.Adapter.KategoriAdapter;
 import com.example.ferinadwifitri.emenu.model.Kategori;
 
 import java.util.ArrayList;

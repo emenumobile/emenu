@@ -9,6 +9,7 @@
     tools:context=".MenuActivity">
 
     <LinearLayout
+        android:onClick="onClickDetailMenu"
         android:paddingLeft="10dp"
         android:padding="10dp"
         android:weightSum="10"

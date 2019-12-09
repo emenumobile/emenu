@@ -1,10 +1,13 @@
 package com.example.ferinadwifitri.emenu;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 
+import com.example.ferinadwifitri.emenu.Adapter.MenuAdapter;
 import com.example.ferinadwifitri.emenu.model.Menu;
 
 import java.util.ArrayList;
@@ -25,13 +28,19 @@ public class MenuActivity extends AppCompatActivity {
 
         //ambil data dummy local
         List<Menu> menus = new ArrayList<>();
-        Menu menu = new Menu(1, "Ramen");
+        Menu menu = new Menu(1, "Ramen Original");
         menus.add(menu);
-        menus.add(new Menu(2,"Nasi"));
-        menus.add(new Menu(3, "Minuman"));
+        menus.add(new Menu(2,"Ramen Cumi"));
+        menus.add(new Menu(3, "Yakisoba"));
+        menus.add(new Menu(4,"Okonomiyaki"));
 
         //set data ke adapter
         adapter.setMenus(menus);
         adapter.notifyDataSetChanged();
+    }
+
+    public void onClickDetailMenu(View view) {
+        Intent intent = new Intent(MenuActivity.this,DetailMenuActivity.class);
+        startActivity(intent);
     }
 }
