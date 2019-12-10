@@ -1,5 +1,10 @@
 package com.example.ferinadwifitri.emenu.model;
 
+/**
+ * TODO 4 : change model into api response check http://jsonschema2pojo.org
+ * copy paste response from postman into url above then make model here
+ * don't forget to check this model name. it must be same.
+ */
 public class Kategori {
     private int id;
     private String nama;
