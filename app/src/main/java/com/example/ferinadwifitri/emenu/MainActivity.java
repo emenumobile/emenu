@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
+import com.example.ferinadwifitri.emenu.model.Kategori;
 import com.example.ferinadwifitri.emenu.model.Menu;
 import com.example.ferinadwifitri.emenu.retrofit.Client;
 import com.example.ferinadwifitri.emenu.retrofit.Service;
@@ -47,23 +48,23 @@ public class MainActivity extends AppCompatActivity {
         // TODO 5: login implementation with retrofit
         // example below
 
-        Service api = Client.createService(Service.class);
-        api.getMenu(1).enqueue(new Callback<List<Menu>>() {
-            @Override
-            public void onResponse(Call<List<Menu>> call,
-                                   Response<List<Menu>> response) {
-                //response if success
-                List<Menu> menus = response.body();
-
-            }
-
-            @Override
-            public void onFailure(Call<List<Menu>> call,
-                                  Throwable t) {
-                //response if fail
-
-            }
-        });
+//        Service api = Client.createService(Service.class);
+//        api.getKategori().enqueue(new Callback<List<Kategori>>() {
+//            @Override
+//            public void onResponse(Call<List<Kategori>> call,
+//                                   Response<List<Kategori>> response) {
+//                //response if success
+//                List<Kategori> kategoris = response.body();
+//
+//            }
+//
+//            @Override
+//            public void onFailure(Call<List<Kategori>> call,
+//                                  Throwable t) {
+//                //response if fail
+//
+//            }
+//        });
 
 
         Intent intent = new Intent(MainActivity.this, HomeActivity.class);

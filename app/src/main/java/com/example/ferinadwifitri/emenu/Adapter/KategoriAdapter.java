@@ -2,74 +2,63 @@ package com.example.ferinadwifitri.emenu.Adapter;
 
 
 import android.content.Context;
-import android.support.annotation.NonNull;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.ferinadwifitri.emenu.R;
 import com.example.ferinadwifitri.emenu.model.Kategori;
 
 import java.util.List;
 
-public class KategoriAdapter extends RecyclerView.Adapter<KategoriAdapter.ViewHolder> {
-    private Context context;
+public class KategoriAdapter extends RecyclerView.Adapter<KategoriAdapter.KategoriViewHolder> {
+
     private List<Kategori> kategoris;
+    private int rowLayout;
+    private Context context;
 
-    public KategoriAdapter(Context context) {
+
+
+    public static class KategoriViewHolder extends RecyclerView.ViewHolder {
+        CardView cardViewKategori;
+        TextView namaKategori;
+        ImageView imgKategori;
+
+
+        public KategoriViewHolder(View v) {
+            super(v);
+            cardViewKategori = (CardView) v.findViewById(R.id.cardview_kategori);
+            namaKategori = (TextView) v.findViewById(R.id.nama_kategori);
+//            imgKategori = (ImageView) v.findViewById(R.id.kategori_img);
+        }
+    }
+
+    public KategoriAdapter(List<Kategori> kategoris,int rowLayout, Context context) {
+        this.kategoris = kategoris;
         this.context = context;
-    }
-
-    @NonNull
-    @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View view = LayoutInflater.from(context).inflate(R.layout.activity_kategori,viewGroup,false);
-        return new ViewHolder(view);
+        this.rowLayout = rowLayout;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
-        final Kategori kategori = kategoris.get(i);
-
-        viewHolder.kategoriTxt.setText(kategori.getNama());
-        viewHolder.view.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(context, "Klik id:" + String.valueOf(kategori.getId()) + " - "
-                        + kategori.getNama(), Toast.LENGTH_SHORT).show();
-            }
-        });
+    public KategoriAdapter.KategoriViewHolder onCreateViewHolder(ViewGroup parent,
+                                                            int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(rowLayout,parent,false);
+        return new KategoriViewHolder(view);
     }
 
+
+    @Override
+    public void onBindViewHolder(KategoriViewHolder holder, final int position) {
+        holder.namaKategori.setText(kategoris.get(position).getTitle());
+
+    }
 
     @Override
     public int getItemCount() {
-        int size;
-        if (kategoris == null){
-            size = 0;
-        } else {
-            size = kategoris.size();
-        }
-        return size;
-    }
-
-    public class ViewHolder extends RecyclerView.ViewHolder {
-        ImageView kategoriImage;
-        TextView kategoriTxt;
-        View view;
-        public ViewHolder(@NonNull View itemView) {
-            super(itemView);
-            kategoriImage = itemView.findViewById(R.id.kategori_img);
-            kategoriTxt = itemView.findViewById(R.id.nama_kategori);
-            view = itemView;
-        }
-    }
-
-    public void setKategoris(List<Kategori> kategoris) {
-        this.kategoris = kategoris;
+        return kategoris.size();
     }
 }

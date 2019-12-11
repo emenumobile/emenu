@@ -1,9 +1,7 @@
 package com.example.ferinadwifitri.emenu.retrofit;
 
 
-import com.example.ferinadwifitri.emenu.model.Menu;
-
-import java.util.List;
+import com.example.ferinadwifitri.emenu.model.KategoriResponse;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -43,8 +41,9 @@ public interface Service {
      * example below
      */
 
-    @GET("menu/item")
-    Call<List<Menu>> getMenu(@Query("category")int cat);
+
+    @GET("mobile/kategori")
+    Call<KategoriResponse> getDataKategori();
 
 
 

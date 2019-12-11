@@ -7,23 +7,20 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class Client{
 
-    /** TODO 2 : change base url to localhost example 127.0.0.0/api/
+    /** TODO 2 : change base url to localhost example 127.0.0.0/api/ (done)
      *  if u have web-server change to your base-url like http://emenu.com/api/
      */
-    private static final String BASE_URL = "192.168.100.1";
+    public static final String BASE_URL = "http://192.168.100.28/";
+    private static Retrofit retrofit = null;
 
 
-    private static OkHttpClient.Builder sHttpClient =
-            //can add interceptors here
-            new OkHttpClient.Builder();
-
-    private static Retrofit.Builder sBuilder =
-            new Retrofit.Builder()
+    public static Retrofit getClient() {
+        if (retrofit==null) {
+            retrofit = new Retrofit.Builder()
                     .baseUrl(BASE_URL)
                     .addConverterFactory(GsonConverterFactory.create())
-                    .client(sHttpClient.build());
-
-    public static <T> T createService(Class<T> serviceClass) {
-        return sBuilder.build().create(serviceClass);
+                    .build();
+        }
+        return retrofit;
     }
 }
