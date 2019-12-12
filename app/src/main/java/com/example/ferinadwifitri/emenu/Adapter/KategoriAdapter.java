@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.ferinadwifitri.emenu.R;
@@ -22,38 +23,34 @@ public class KategoriAdapter extends RecyclerView.Adapter<KategoriAdapter.Katego
     private Context context;
 
 
-
     public static class KategoriViewHolder extends RecyclerView.ViewHolder {
-        CardView cardViewKategori;
-        TextView namaKategori;
-        ImageView imgKategori;
-
+        LinearLayout kategoriLayout;
+        TextView nama_kategori;
 
         public KategoriViewHolder(View v) {
             super(v);
-            cardViewKategori = (CardView) v.findViewById(R.id.cardview_kategori);
-            namaKategori = (TextView) v.findViewById(R.id.nama_kategori);
-//            imgKategori = (ImageView) v.findViewById(R.id.kategori_img);
+            kategoriLayout = (LinearLayout) v.findViewById(R.id.kategori_layout);
+            nama_kategori = (TextView) v.findViewById(R.id.nama_kategori);
         }
     }
 
-    public KategoriAdapter(List<Kategori> kategoris,int rowLayout, Context context) {
+    public KategoriAdapter(List<Kategori> kategoris, int rowLayout, Context context) {
         this.kategoris = kategoris;
-        this.context = context;
         this.rowLayout = rowLayout;
+        this.context = context;
     }
 
     @Override
     public KategoriAdapter.KategoriViewHolder onCreateViewHolder(ViewGroup parent,
                                                             int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(rowLayout,parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(rowLayout, parent, false);
         return new KategoriViewHolder(view);
     }
 
 
     @Override
     public void onBindViewHolder(KategoriViewHolder holder, final int position) {
-        holder.namaKategori.setText(kategoris.get(position).getTitle());
+        holder.nama_kategori.setText(kategoris.get(position).getNamaKategori());
 
     }
 

@@ -8,8 +8,6 @@ import android.widget.EditText;
 
 import com.example.ferinadwifitri.emenu.model.Kategori;
 import com.example.ferinadwifitri.emenu.model.Menu;
-import com.example.ferinadwifitri.emenu.retrofit.Client;
-import com.example.ferinadwifitri.emenu.retrofit.Service;
 
 import java.util.List;
 

@@ -1,37 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-
+    android:id="@+id/kategori_layout"
     android:layout_width="match_parent"
-    android:id="@+id/cardview_kategori"
-    android:layout_height="200dp"
-    app:cardElevation="4dp">
+    android:layout_height="wrap_content">
 
-    <RelativeLayout
+    <android.support.v7.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="200dp"
+        android:layout_marginBottom="5dp"
+        app:cardCornerRadius="5dp">
 
-        <ImageView
-            android:id="@+id/kategori_img"
-            android:src="@drawable/gradientbackground"
-            android:scaleType="centerCrop"
+        <RelativeLayout
+
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-        </ImageView>
 
-        <TextView
-            android:id="@+id/nama_kategori"
-            android:text="Nama Kategori"
-            android:textSize="20sp"
-            android:gravity="center"
-            android:layout_alignParentBottom="true"
-            android:textColor="@color/cardview_light_background"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/kategori_img"
+                android:layout_width="match_parent"
+                android:layout_height="170dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/gradientbackground">
+            </ImageView>
 
-        </TextView>
+            <TextView
+                android:id="@+id/nama_kategori"
+                android:layout_below="@+id/kategori_img"
+                android:text="Nama Kategori"
+                android:textSize="20sp"
+                android:gravity="center"
+                android:layout_alignParentBottom="true"
+                android:textColor="@color/cardview_light_background"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/gradientbackground">
 
-    </RelativeLayout>
+            </TextView>
 
-
-</android.support.v7.widget.CardView>
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+</LinearLayout>

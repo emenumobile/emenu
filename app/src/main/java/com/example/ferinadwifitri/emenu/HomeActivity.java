@@ -28,7 +28,7 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     public void onClickKategori (View view){
-        Intent intent = new Intent (HomeActivity.this,KategoriActivity.class);
+        Intent intent = new Intent (HomeActivity.this,kategoriActivity.class);
         startActivity(intent);
     }
 

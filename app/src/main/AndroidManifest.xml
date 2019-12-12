@@ -17,7 +17,7 @@
         <activity android:name=".HomeActivity" />
         <activity android:name=".ListKategoriActivity" />
         <activity android:name=".DetailMenuActivity" />
-        <activity android:name=".KategoriActivity" />
+        <activity android:name=".kategoriActivity" />
         <activity android:name=".QrCodeActivity" />
         <activity android:name=".ProfilActivity" />
         <activity android:name=".MainActivity">
