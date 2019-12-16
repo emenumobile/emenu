@@ -3,6 +3,8 @@ package com.example.ferinadwifitri.emenu;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.example.ferinadwifitri.emenu.R;
+
 public class PesananActivity extends AppCompatActivity {
 
     @Override

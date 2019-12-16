@@ -21,7 +21,6 @@ public class HomeActivity extends AppCompatActivity {
         namaPelanggan.setText(namaStr);
     }
 
-
     public void onClickMenu(View view) {
         Intent intent = new Intent(HomeActivity.this,MenuActivity.class);
         startActivity(intent);

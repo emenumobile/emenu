@@ -3,9 +3,6 @@ package com.example.ferinadwifitri.emenu.model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * TODO 4 : change model into api response check http://jsonschema2pojo.org
  * copy paste response from postman into url above then make model here

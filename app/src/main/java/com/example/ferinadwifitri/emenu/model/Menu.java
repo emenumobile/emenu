@@ -26,6 +26,8 @@ public class Menu {
     @Expose
     private Integer kategoriId;
 
+    public static final String id_menu = "ID_MENU";
+
     public Menu(Integer idMenu,String nama,Integer harga,String deskripsi,Integer stok,String gambar,Integer kategoriId){
         this.idMenu=idMenu;
         this.nama=nama;
