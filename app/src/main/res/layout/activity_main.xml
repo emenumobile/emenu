@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="30dp"
+    android:background="#FFF"
     tools:context=".MainActivity">
 
     <ImageView
@@ -22,11 +23,11 @@
         >
 
         <EditText
-            android:id="@+id/nomormeja_main_edt"
+            android:id="@+id/et_username"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="@string/nomor_meja"
+            android:hint="Username"
             android:inputType="text"
             android:textSize="20sp" />
     </android.support.design.widget.TextInputLayout>
@@ -39,12 +40,12 @@
         >
 
         <EditText
-            android:id="@+id/pass_main_edt"
+            android:id="@+id/et_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="@string/password"
-            android:inputType="text"
+            android:inputType="textPassword"
             android:textSize="20sp" />
 
     </android.support.design.widget.TextInputLayout>
@@ -57,7 +58,7 @@
         >
 
         <EditText
-            android:id="@+id/nama_main_edt"
+            android:id="@+id/et_nama"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -69,11 +70,11 @@
     </android.support.design.widget.TextInputLayout>
 
     <Button
+        android:id="@+id/btnLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:background="@drawable/button_rounded"
-        android:onClick="onClickLogin"
         android:text="@string/login"
         android:textColor="#ffffff"
         android:textSize="22sp" />

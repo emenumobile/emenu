@@ -16,8 +16,8 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         namaPelanggan = findViewById(R.id.txtnamapelanggan);
 
-        String namaStr, nomorStr;
-        namaStr = getIntent().getStringExtra("KeyNama");
+        String namaStr;
+        namaStr = getIntent().getStringExtra("Nama");
         namaPelanggan.setText(namaStr);
     }
 
@@ -27,7 +27,7 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     public void onClickKategori (View view){
-        Intent intent = new Intent (HomeActivity.this,kategoriActivity.class);
+        Intent intent = new Intent (HomeActivity.this, KategoriActivity.class);
         startActivity(intent);
     }
 

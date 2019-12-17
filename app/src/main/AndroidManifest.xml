@@ -13,9 +13,8 @@
         <activity android:name=".PesananActivity" />
         <activity android:name=".MenuActivity" />
         <activity android:name=".KeranjangActivity" />
-        <activity android:name=".ListMenuActivity" />
         <activity android:name=".HomeActivity" />
-        <activity android:name=".ListKategoriActivity" />
+        <activity android:name=".KategoriActivity" />
         <activity android:name=".DetailMenuActivity" />
         <activity android:name=".kategoriActivity" />
         <activity android:name=".QrCodeActivity" />
