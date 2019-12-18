@@ -11,6 +11,7 @@ import com.example.ferinadwifitri.emenu.model.MenuResponse;
 import com.example.ferinadwifitri.emenu.model.UserResponse;
 import com.example.ferinadwifitri.emenu.rest.ApiClient;
 import com.example.ferinadwifitri.emenu.rest.ApiInterface;
+import com.example.ferinadwifitri.emenu.storage.SharedPrefManager;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -28,6 +29,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         editTextPassword = findViewById(R.id.et_password);
 
         findViewById(R.id.btnLogin).setOnClickListener(this);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        if(SharedPrefManager.getInstance(this).isLoggedIn()){
+            Intent intent = new Intent(this,HomeActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(intent);
+        }
     }
 
     @Override
@@ -64,6 +75,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 assert userResponse != null;
                 if(!userResponse.getError()){
+                    SharedPrefManager.getInstance(MainActivity.this)
+                            .saveUser(userResponse.getUser());
+
                     Intent intent = new Intent(MainActivity.this,HomeActivity.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     startActivity(intent);

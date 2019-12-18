@@ -4,6 +4,7 @@
     <solid
         android:color="#CE2029"
         android:tint="#D67A74"
+        
         />
     <corners
         android:radius="20dp"
