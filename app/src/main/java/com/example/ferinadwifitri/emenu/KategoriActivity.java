@@ -38,8 +38,8 @@ public class KategoriActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<KategoriResponse> call, Response<KategoriResponse> response) {
                 int statusCode = response.code();
-                List<Kategori> movies = response.body().getKategori();
-                recyclerView.setAdapter(new KategoriAdapter(movies, R.layout.activity_kategori, getApplicationContext()));
+                List<Kategori> kategoris = response.body().getKategori();
+                recyclerView.setAdapter(new KategoriAdapter(kategoris, R.layout.activity_kategori, getApplicationContext()));
             }
 
             @Override

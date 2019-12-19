@@ -3,6 +3,7 @@ package com.example.ferinadwifitri.emenu;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.CardView;
 import android.view.View;
 import android.widget.TextView;
 
@@ -10,7 +11,7 @@ import com.example.ferinadwifitri.emenu.model.User;
 import com.example.ferinadwifitri.emenu.storage.SharedPrefManager;
 
 public class HomeActivity extends AppCompatActivity implements View.OnClickListener {
-
+    private CardView CvTransaksi;
     private TextView namaPelanggan;
 
     @Override
@@ -20,10 +21,20 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
         namaPelanggan = findViewById(R.id.txtnamapelanggan);
 
-        User user = SharedPrefManager.getInstance(this).getUser();
+        final User user = SharedPrefManager.getInstance(this).getUser();
         namaPelanggan.setText(user.getNama());
 
         findViewById(R.id.btnLogout).setOnClickListener(this);
+
+        CvTransaksi = findViewById(R.id.cv_transaksi);
+        CvTransaksi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent (CvTransaksi.getContext(),PesananActivity.class);
+                intent.putExtra("id",user.getIdMember());
+                CvTransaksi.getContext().startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -51,10 +62,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         startActivity(intent);
     }
 
-    public void onClickPesanan (View view){
-        Intent intent = new Intent (HomeActivity.this,PesananActivity.class);
-        startActivity(intent);
-    }
+
 
     public void onClickProfil (View view){
         Intent intent = new Intent(HomeActivity.this,ProfilActivity.class);

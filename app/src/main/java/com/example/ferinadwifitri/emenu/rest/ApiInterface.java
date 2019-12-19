@@ -4,6 +4,7 @@ import com.example.ferinadwifitri.emenu.model.Kategori;
 import com.example.ferinadwifitri.emenu.model.KategoriResponse;
 import com.example.ferinadwifitri.emenu.model.Menu;
 import com.example.ferinadwifitri.emenu.model.MenuResponse;
+import com.example.ferinadwifitri.emenu.model.TransaksiResponse;
 import com.example.ferinadwifitri.emenu.model.UserResponse;
 
 import java.util.List;
@@ -30,6 +31,9 @@ public interface ApiInterface {
     @GET("mobile/login/{email}/{password}")
     Call<UserResponse> userLogin(@Path("email") String email,
                                  @Path("password") String password);
+
+    @GET("mobile/lihat_transaksi/{id_member}")
+    Call<TransaksiResponse> riwayatTransaksi(@Path("id_member") int memberId);
 
 
 

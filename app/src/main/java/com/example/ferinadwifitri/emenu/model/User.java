@@ -13,11 +13,27 @@ public class User {
     @SerializedName("nama")
     @Expose
     private String nama;
+    @SerializedName("id_member")
+    @Expose
+    private Integer idMember;
+    @SerializedName("no_hp")
+    @Expose
+    private String noHp;
+    @SerializedName("alamat")
+    @Expose
+    private String alamat;
+    @SerializedName("saldo")
+    @Expose
+    private Integer saldo;
 
-    public User(Integer userId, String email, String nama) {
+    public User(Integer userId, String email, String nama, Integer idMember, String noHp, String alamat, Integer saldo) {
         this.userId = userId;
         this.email = email;
         this.nama = nama;
+        this.idMember = idMember;
+        this.noHp = noHp;
+        this.alamat = alamat;
+        this.saldo = saldo;
     }
 
     public Integer getUserId() {
@@ -42,5 +58,37 @@ public class User {
 
     public void setNama(String nama) {
         this.nama = nama;
+    }
+
+    public Integer getIdMember() {
+        return idMember;
+    }
+
+    public void setIdMember(Integer idMember) {
+        this.idMember = idMember;
+    }
+
+    public String getNoHp() {
+        return noHp;
+    }
+
+    public void setNoHp(String noHp) {
+        this.noHp = noHp;
+    }
+
+    public String getAlamat() {
+        return alamat;
+    }
+
+    public void setAlamat(String alamat) {
+        this.alamat = alamat;
+    }
+
+    public Integer getSaldo() {
+        return saldo;
+    }
+
+    public void setSaldo(Integer saldo) {
+        this.saldo = saldo;
     }
 }
