@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName;
 public class Menu {
     @SerializedName("id_menu")
     @Expose
-    private Integer idMenu;
+    private String idMenu;
     @SerializedName("nama")
     @Expose
     private String nama;
@@ -28,7 +28,7 @@ public class Menu {
 
     public static final String id_menu = "ID_MENU";
 
-    public Menu(Integer idMenu,String nama,Integer harga,String deskripsi,Integer stok,String gambar,Integer kategoriId){
+    public Menu(String idMenu,String nama,Integer harga,String deskripsi,Integer stok,String gambar,Integer kategoriId){
         this.idMenu=idMenu;
         this.nama=nama;
         this.harga=harga;
@@ -38,11 +38,11 @@ public class Menu {
         this.kategoriId=kategoriId;
     }
 
-    public Integer getIdMenu() {
+    public String getIdMenu() {
         return idMenu;
     }
 
-    public void setIdMenu(Integer idMenu) {
+    public void setIdMenu(String idMenu) {
         this.idMenu = idMenu;
     }
 
