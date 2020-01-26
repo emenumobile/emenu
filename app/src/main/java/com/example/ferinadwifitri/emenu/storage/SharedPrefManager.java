@@ -22,13 +22,18 @@ public class SharedPrefManager {
         return mInstance;
     }
 
-    public void saveUser(User user){
+    public void saveUser(User user, boolean isMeja){
         SharedPreferences sharedPreferences = mContext.getSharedPreferences(SHARED_PREF_NAME,Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
 
+
         editor.putInt("user_id",user.getUserId());
         editor.putString("email",user.getEmail());
-        editor.putString("nama",user.getNama());
+        if (isMeja){
+            editor.putString("nama","Meja " + String.valueOf(user.getUserId()));
+        }else {
+            editor.putString("nama",user.getNama());
+        }
         editor.putInt("id_member",user.getIdMember());
         editor.putString("alamat",user.getAlamat());
         editor.putString("no_hp",user.getNoHp());

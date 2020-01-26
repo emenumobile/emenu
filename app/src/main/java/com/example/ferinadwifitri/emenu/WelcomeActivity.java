@@ -19,4 +19,9 @@ public class WelcomeActivity extends AppCompatActivity {
         Intent intent = new Intent(WelcomeActivity.this,MainActivity.class);
         startActivity(intent);
     }
+
+    public void onClickPengunjung(View view) {
+        Intent intent = new Intent(WelcomeActivity.this,LoginMejaActivity.class);
+        startActivity(intent);
+    }
 }

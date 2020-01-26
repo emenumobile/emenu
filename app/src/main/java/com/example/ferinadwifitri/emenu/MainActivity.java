@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 assert userResponse != null;
                 if(!userResponse.getError()){
                     SharedPrefManager.getInstance(MainActivity.this)
-                            .saveUser(userResponse.getUser());
+                            .saveUser(userResponse.getUser(), false);
 
                     Intent intent = new Intent(MainActivity.this,HomeActivity.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
@@ -89,7 +89,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             @Override
             public void onFailure(Call<UserResponse> call, Throwable t) {
-
+                Toast.makeText(MainActivity.this,t.getMessage(),Toast.LENGTH_SHORT).show();
             }
         });
     }

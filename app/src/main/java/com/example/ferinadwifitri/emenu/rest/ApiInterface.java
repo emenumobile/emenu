@@ -35,6 +35,10 @@ public interface ApiInterface {
     @GET("mobile/lihat_transaksi/{id_member}")
     Call<TransaksiResponse> riwayatTransaksi(@Path("id_member") int memberId);
 
+    @GET("mobile/loginmeja/{username}/{password}")
+    Call<UserResponse> loginMeja(@Path("username") String username,
+                                 @Path("password") String password);
+
 
 
 }

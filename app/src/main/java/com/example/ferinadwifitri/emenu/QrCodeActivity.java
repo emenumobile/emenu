@@ -47,8 +47,6 @@ public class QrCodeActivity extends AppCompatActivity {
     }
 
 
-
-
     public void OnCickKembali(View view) {
         Intent intent = new Intent(this,ProfilActivity.class);
         startActivity(intent);
