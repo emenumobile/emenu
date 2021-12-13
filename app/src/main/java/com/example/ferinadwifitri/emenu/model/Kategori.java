@@ -15,10 +15,14 @@ public class Kategori {
     @SerializedName("nama_kategori")
     @Expose
     private String namaKategori;
+    @SerializedName("gambar")
+    @Expose
+    private String gambar;
 
-    public Kategori(Integer idKategori, String namaKategori){
+    public Kategori(Integer idKategori, String namaKategori, String gambar){
         this.idKategori = idKategori;
         this.namaKategori =namaKategori;
+        this.gambar = gambar;
     }
 
     public Integer getIdKategori() {
@@ -35,5 +39,13 @@ public class Kategori {
 
     public void setNamaKategori(String namaKategori) {
         this.namaKategori = namaKategori;
+    }
+
+    public Object getGambar() {
+        return gambar;
+    }
+
+    public void setGambar(String gambar) {
+        this.gambar = gambar;
     }
 }

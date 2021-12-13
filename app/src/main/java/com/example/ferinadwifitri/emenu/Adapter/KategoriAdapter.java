@@ -6,12 +6,16 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.example.ferinadwifitri.emenu.MenuActivity;
 import com.example.ferinadwifitri.emenu.R;
 import com.example.ferinadwifitri.emenu.model.Kategori;
+import com.example.ferinadwifitri.emenu.rest.ApiClient;
 
 import java.util.List;
 
@@ -24,12 +28,14 @@ public class KategoriAdapter extends RecyclerView.Adapter<KategoriAdapter.Katego
         View view;
         LinearLayout kategoriLayout;
         TextView nama_kategori;
+        ImageView imageView;
 
         public KategoriViewHolder(View v) {
             super(v);
             kategoriLayout = (LinearLayout) v.findViewById(R.id.kategori_layout);
             nama_kategori = (TextView) v.findViewById(R.id.nama_kategori);
-            view = v;
+            imageView = (ImageView) v.findViewById(R.id.kategori_img);
+           // view = v;
         }
     }
 
@@ -56,6 +62,12 @@ public class KategoriAdapter extends RecyclerView.Adapter<KategoriAdapter.Katego
                 Intent i = new Intent(holder.itemView.getContext(),MenuActivity.class);
                 i.putExtra("key",data.getIdKategori());
                 holder.itemView.getContext().startActivity(i);
+
+                Glide.with(holder.itemView.getContext())
+                        .load(ApiClient.IMAGE_URL+kategoris.get(position).getGambar())
+                        .fitCenter()
+                        .diskCacheStrategy(DiskCacheStrategy.ALL)
+                        .into(holder.imageView);
             }
         });
     }
